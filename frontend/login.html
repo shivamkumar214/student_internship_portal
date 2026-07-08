@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <h2>🎓 SIP</h2>
+
+                <p>Student Internship Portal</p>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="index.html#about">About</a></li>
+
+                <li><a href="login.html">Login</a></li>
+
+                <li><a href="register.html">Register</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <section class="login-section">
+
+        <div class="login-card">
+
+            <h1>Student Login</h1>
+
+            <p>Login to continue to your internship dashboard.</p>
+
+            <form onsubmit="return validateForm()">
+
+                <label for="studentid">Student ID</label>
+
+                <input
+                type="text"
+                id="studentid"
+                placeholder="Enter Student ID">
+
+                <label for="password">Password</label>
+
+                <input
+                type="password"
+                id="password"
+                placeholder="Enter Password">
+
+                <button type="submit">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <p class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">Register</a>
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+
+            © 2026 Student Internship Portal | All Rights Reserved
+
+        </p>
+
+    </footer>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
