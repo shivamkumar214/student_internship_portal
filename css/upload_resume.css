@@ -1,0 +1,275 @@
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:FloralWhite;
+    color:DarkSlateGray;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    padding:18px 60px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+
+}
+
+.logo h2{
+
+    color:Chocolate;
+
+}
+
+.logo p{
+
+    color:Gray;
+
+    font-size:14px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:25px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:DarkSlateGray;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:Chocolate;
+
+}
+
+/* ---------- Upload Section ---------- */
+
+.resume-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+}
+
+/* ---------- Upload Card ---------- */
+
+.resume-card{
+
+    width:600px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.resume-card h1{
+
+    text-align:center;
+
+    color:Chocolate;
+
+    margin-bottom:15px;
+
+}
+
+.resume-card>p{
+
+    text-align:center;
+
+    color:Gray;
+
+    margin-bottom:35px;
+
+}
+
+/* ---------- Form ---------- */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+label{
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+}
+
+/* ---------- File Upload ---------- */
+
+input[type=file]{
+
+    padding:15px;
+
+    border:2px dashed Chocolate;
+
+    border-radius:12px;
+
+    background:WhiteSmoke;
+
+    cursor:pointer;
+
+    margin-bottom:30px;
+
+}
+
+input[type=file]:hover{
+
+    background:Beige;
+
+}
+
+/* ---------- Button ---------- */
+
+button{
+
+    background:Chocolate;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:SaddleBrown;
+
+}
+
+/* ---------- Upload Status ---------- */
+
+.upload-status{
+
+    margin-top:40px;
+
+    background:WhiteSmoke;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+.upload-status h3{
+
+    color:Chocolate;
+
+    margin-bottom:10px;
+
+}
+
+.upload-status p{
+
+    color:Gray;
+
+    font-weight:bold;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    margin-top:60px;
+
+    background:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-shadow:0 -2px 8px rgba(0,0,0,.05);
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.resume-card{
+
+width:100%;
+
+padding:30px;
+
+}
+
+}
