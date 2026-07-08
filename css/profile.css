@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+body{
+    background-color:FloralWhite;
+    color:DarkSlateGray;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:18px 70px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo h2{
+    color:Chocolate;
+    font-size:32px;
+}
+
+.logo p{
+    color:Gray;
+    font-size:13px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:DarkSlateGray;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:Chocolate;
+}
+
+.profile-section{
+    display:flex;
+    justify-content:center;
+    padding:70px;
+}
+
+.profile-card{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.profile-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.profile-icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    background:Beige;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.profile-header h2{
+    color:Chocolate;
+    margin-bottom:8px;
+}
+
+.profile-header p{
+    color:Gray;
+}
+
+.profile-details{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.detail{
+    background:FloralWhite;
+    padding:18px;
+    border-radius:12px;
+}
+
+.detail span{
+    display:block;
+    color:Gray;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.detail strong{
+    color:DarkSlateGray;
+}
+
+button{
+    width:100%;
+    margin-top:35px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:Chocolate;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:SaddleBrown;
+}
+
+footer{
+    background:Chocolate;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}

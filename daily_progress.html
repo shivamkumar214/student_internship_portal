@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Daily Progress | Student Internship Portal</title>
+    <link rel="stylesheet" href="css/daily_progress.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Internship Portal</h2>
+            <p>Track Your Internship Journey</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="view_tasks.html">Tasks</a></li>
+            <li><a href="daily_progress.html">Progress</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <section class="progress-section">
+
+        <div class="progress-card">
+
+            <span class="page-tag">Daily Internship Update</span>
+
+            <h2>Update Daily Progress</h2>
+
+            <p class="subtitle">
+                Record your daily internship activities and keep your mentor updated.
+            </p>
+
+            <form>
+
+                <div class="input-group">
+                    <label>Date</label>
+                    <input type="date">
+                </div>
+
+                <div class="input-group">
+                    <label>Task Title</label>
+                    <input type="text" placeholder="Enter Task Title">
+                </div>
+
+                <div class="input-group">
+                    <label>Work Description</label>
+                    <textarea rows="5" placeholder="Describe your work..."></textarea>
+                </div>
+
+                <div class="row">
+
+                    <div class="input-group">
+                        <label>Status</label>
+
+                        <select>
+                            <option>Select Status</option>
+                            <option>Pending</option>
+                            <option>In Progress</option>
+                            <option>Completed</option>
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+                        <label>Hours Worked</label>
+                        <input type="number" placeholder="e.g. 6">
+                    </div>
+
+                </div>
+
+                <button type="submit">Submit Progress</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Student Internship Portal | Designed for Students</p>
+    </footer>
+
+</body>
+
+</html>

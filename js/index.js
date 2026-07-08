@@ -1,0 +1,1 @@
+console.log("Student Internship Portal Loaded");
