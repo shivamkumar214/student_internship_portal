@@ -32,6 +32,7 @@ app.get("/", (req, res) => {
   res.send("<h1>Student Internship Portal</h1>");
 });
 app.use("/api/auth", authRoutes);
+router.post("/signup" , signup);
 app.use("/api/profile", profileRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/tasks", taskRoutes);
@@ -45,10 +46,6 @@ app.post("/api/logout", (req, res) => {
   });
 });
 
-// app.use("/api/profile", profileRoutes);
-// app.all('*', (req, res) => {
-//     res.send("<h1>No Internship Portal</h1>");
-// });
 
 const PORT = process.env.PORT || 1000;
 

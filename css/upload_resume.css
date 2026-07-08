@@ -1,5 +1,3 @@
-/* ---------- Reset ---------- */
-
 *{
     margin:0;
     padding:0;
@@ -15,8 +13,6 @@ body{
     background-color:FloralWhite;
     color:DarkSlateGray;
 }
-
-/* ---------- Navbar ---------- */
 
 .navbar{
 
@@ -76,8 +72,6 @@ body{
 
 }
 
-/* ---------- Upload Section ---------- */
-
 .resume-section{
 
     display:flex;
@@ -90,7 +84,6 @@ body{
 
 }
 
-/* ---------- Upload Card ---------- */
 
 .resume-card{
 
@@ -126,8 +119,6 @@ body{
 
 }
 
-/* ---------- Form ---------- */
-
 form{
 
     display:flex;
@@ -143,8 +134,6 @@ label{
     font-weight:bold;
 
 }
-
-/* ---------- File Upload ---------- */
 
 input[type=file]{
 
@@ -167,8 +156,6 @@ input[type=file]:hover{
     background:Beige;
 
 }
-
-/* ---------- Button ---------- */
 
 button{
 
@@ -195,8 +182,6 @@ button:hover{
     background:SaddleBrown;
 
 }
-
-/* ---------- Upload Status ---------- */
 
 .upload-status{
 
@@ -228,8 +213,6 @@ button:hover{
 
 }
 
-/* ---------- Footer ---------- */
-
 footer{
 
     margin-top:60px;
@@ -244,8 +227,6 @@ footer{
 
 }
 
-/* ---------- Responsive ---------- */
-
 @media(max-width:768px){
 
 .navbar{
@@ -259,7 +240,6 @@ gap:15px;
 .nav-links{
 
 flex-wrap:wrap;
-
 justify-content:center;
 
 }

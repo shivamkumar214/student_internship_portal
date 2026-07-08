@@ -48,32 +48,22 @@ body{
 .nav-links a:hover{
     color:Chocolate;
 }
-/* ================= Hero Section ================= */
 
 .hero{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:80px;
-
 }
+
 .hero-content{
-
     background-color:White;
-
     width:55%;
-
     padding:40px;
-
     border-radius:20px;
-
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
-
 }
+
 .hero-tag{
     display:inline-block;
     background-color:Beige;
@@ -83,19 +73,23 @@ body{
     font-size:14px;
     margin-bottom:20px;
 }
+
 .hero-content h1{
     font-size:45px;
     margin-bottom:20px;
 }
+
 .hero-text{
     color:Gray;
     line-height:1.8;
     margin-bottom:30px;
 }
+
 .hero-buttons{
     display:flex;
     gap:15px;
 }
+
 .primary-btn{
     background-color:Chocolate;
     color:White;
@@ -104,6 +98,7 @@ body{
     border-radius:10px;
     cursor:pointer;
 }
+
 .secondary-btn{
     background-color:White;
     color:Chocolate;
@@ -112,10 +107,12 @@ body{
     border-radius:10px;
     cursor:pointer;
 }
+
 .hero-cards{
     display:grid;
     gap:20px;
 }
+
 .mini-card{
     background-color:White;
     padding:25px;
@@ -125,8 +122,8 @@ body{
     font-weight:bold;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
     transition:0.3s;
-
 }
+
 .mini-card:hover{
     transform:translateY(-5px);
 }
@@ -185,6 +182,7 @@ body{
     transform:translateY(-8px);
 
 }
+
 .feature-card h3{
     margin-bottom:15px;
 }

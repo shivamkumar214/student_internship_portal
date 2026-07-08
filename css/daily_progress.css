@@ -10,8 +10,6 @@ body{
     color:DarkSlateGray;
 }
 
-/* Navbar */
-
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -45,8 +43,6 @@ body{
 .nav-links a:hover{
     color:Chocolate;
 }
-
-/* Section */
 
 .progress-section{
     padding:70px;

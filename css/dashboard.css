@@ -72,8 +72,6 @@ body{
 
 }
 
-/* ---------- Dashboard ---------- */
-
 .dashboard{
 
     width:90%;
@@ -105,8 +103,6 @@ body{
     color:Gray;
 
 }
-
-/* ---------- Cards ---------- */
 
 .card-container{
 
@@ -177,9 +173,6 @@ body{
     background:SaddleBrown;
 
 }
-
-/* ---------- Summary ---------- */
-
 .summary{
 
     margin-top:50px;
@@ -205,88 +198,55 @@ body{
 }
 
 .summary-card{
-
     background:white;
-
     padding:25px;
-
     border-radius:18px;
-
     text-align:center;
-
     box-shadow:0 8px 18px rgba(0,0,0,.08);
-
     transition:.3s;
 
 }
-
 .summary-card:hover{
-
     transform:translateY(-5px);
-
 }
 
 .summary-card h3{
-
     color:Chocolate;
-
     margin-bottom:15px;
-
 }
 
 .summary-card p{
-
     color:Gray;
-
     font-size:17px;
-
     font-weight:bold;
-
 }
 
-/* ---------- Footer ---------- */
-
 footer{
-
     margin-top:60px;
-
     background:white;
-
     text-align:center;
-
     padding:20px;
-
     box-shadow:0 -2px 8px rgba(0,0,0,.05);
-
 }
 
 @media(max-width:768px){
 
 .card-container{
-
 grid-template-columns:1fr;
-
 }
+
 .summary-grid{
-
     grid-template-columns:1fr;
-
 }
 
 .navbar{
-
 flex-direction:column;
-
 gap:15px;
-
 }
 
 .nav-links{
-
 flex-wrap:wrap;
-
 justify-content:center;
-
 }
 
 }

@@ -14,8 +14,6 @@ body{
     color:DarkSlateGray;
 }
 
-/* ---------- Navbar ---------- */
-
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -51,168 +49,103 @@ body{
     color:Chocolate;
 }
 
-/* ---------- Section ---------- */
-
 .tasks-section{
-
     display:flex;
-
     justify-content:center;
-
     padding:60px 20px;
-
 }
-
-/* ---------- Card ---------- */
 
 .tasks-card{
 
     width:1000px;
-
     background:white;
-
     padding:40px;
-
     border-radius:20px;
-
     box-shadow:0 8px 20px rgba(0,0,0,.08);
-
 }
 
 .tasks-card h1{
 
     color:Chocolate;
-
     text-align:center;
-
     margin-bottom:15px;
-
 }
 
 .tasks-card>p{
-
     text-align:center;
-
     color:Gray;
-
     margin-bottom:35px;
 
 }
 
-/* ---------- Table ---------- */
-
 table{
 
     width:100%;
-
     border-collapse:collapse;
 
 }
 
 th{
-
     background:Chocolate;
-
     color:white;
-
     padding:15px;
-
 }
 
 td{
 
     padding:15px;
-
     text-align:center;
-
     border-bottom:1px solid Gainsboro;
 
 }
 
 tr:hover{
-
     background:Beige;
-
 }
-
-/* ---------- Status ---------- */
 
 .pending{
 
     background:Moccasin;
-
     color:SaddleBrown;
-
     padding:8px 16px;
-
     border-radius:30px;
-
     font-weight:bold;
-
 }
 
 .completed{
 
     background:HoneyDew;
-
     color:ForestGreen;
-
     padding:8px 16px;
-
     border-radius:30px;
-
     font-weight:bold;
-
 }
-
-/* ---------- Footer ---------- */
 
 footer{
-
     margin-top:60px;
-
     background:white;
-
     text-align:center;
-
     padding:20px;
-
     box-shadow:0 -2px 8px rgba(0,0,0,.05);
-
 }
 
-/* ---------- Responsive ---------- */
-
 @media(max-width:768px){
-
 .navbar{
-
 flex-direction:column;
-
 gap:15px;
-
 }
 
 .nav-links{
-
 flex-wrap:wrap;
-
 justify-content:center;
-
 }
 
 .tasks-card{
-
 width:100%;
-
 padding:25px;
-
 }
 
 table{
-
 font-size:14px;
-
 }
-
 }
