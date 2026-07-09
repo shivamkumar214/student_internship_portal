@@ -17,12 +17,16 @@ const app = express();
 import connectDB from "./config/db.js";
 connectDB();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: "http://127.0.0.1:5501",
+    credentials: true
+})); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
-  fileUpload({
+  fileUpload({  
     useTempFiles: true,
     tempFileDir: "./uploads",
   }),
@@ -32,7 +36,7 @@ app.get("/", (req, res) => {
   res.send("<h1>Student Internship Portal</h1>");
 });
 app.use("/api/auth", authRoutes);
-router.post("/signup" , signup);
+// app.post("/signup" , signup);
 app.use("/api/profile", profileRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/tasks", taskRoutes);
