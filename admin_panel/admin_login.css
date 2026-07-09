@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+body{
+    background-color:FloralWhite;
+    color:DarkSlateGray;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:White;
+    padding:18px 70px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo h2{
+    color:Chocolate;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo p{
+    color:Gray;
+    font-size:13px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:DarkSlateGray;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:Chocolate;
+}
+
+/* ---------- LOGIN SECTION ---------- */
+
+.login-page{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:480px;
+    background-color:White;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.login-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.login-header h1{
+    color:Chocolate;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.login-header p{
+    color:Gray;
+    font-size:15px;
+}
+
+label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus{
+    border-color:Chocolate;
+}
+
+button{
+    width:100%;
+    margin-top:28px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background-color:Chocolate;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background-color:SaddleBrown;
+}
+
+#message{
+    text-align:center;
+    color:red;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.back-link{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back-link a{
+    text-decoration:none;
+    color:Chocolate;
+    font-weight:bold;
+}
+
+.back-link a:hover{
+    text-decoration:underline;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    background-color:Chocolate;
+    color:White;
+    text-align:center;
+    padding:20px;
+}
+
+footer p{
+    margin:0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+    padding:20px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.login-box{
+    padding:30px;
+}
+
+.login-header h1{
+    font-size:28px;
+}
+
+}
