@@ -31,7 +31,6 @@ async function getProfile() {
 async function getTasks() {
 
     try {
-
         const response = await axios.get(
             `${BASE_URL}/api/tasks`,
             {

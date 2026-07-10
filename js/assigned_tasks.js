@@ -1,4 +1,4 @@
-console.log("Assigned Tasks Loaded Successfully");
+// console.log("Assigned Tasks Loaded Successfully");
 // import {BASE_URL} from "./config.js";
 import { BASE_URL } from "./config.js";
 
@@ -10,28 +10,22 @@ const noTasks = document.getElementById("noTasks");
 // ==============================
 
 async function getTasks() {
-    try {
-        const response = await axios.get(
-            `${BASE_URL}/api/tasks`,
-            {
-                withCredentials: true
-            }
-        );
+  try {
+    const response = await axios.get(`${BASE_URL}/api/tasks`, {
+      withCredentials: true,
+    });
 
-        const tasks = response.data.tasks;
+    const tasks = response.data.tasks;
 
-        if (tasks.length === 0) {
+    if (tasks.length === 0) {
+      noTasks.style.display = "block";
+      return;
+    }
 
-            noTasks.style.display = "block";
-            return;
+    taskTableBody.innerHTML = "";
 
-        }
-
-        taskTableBody.innerHTML = "";
-
-        tasks.forEach(task => {
-
-            taskTableBody.innerHTML += `
+    tasks.forEach((task) => {
+      taskTableBody.innerHTML += `
 
             <tr>
 
@@ -55,51 +49,50 @@ async function getTasks() {
 
             </tr>
             `;
-        });
-    } catch (error) {
-        console.log(error);
-    }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getTasks();
-
 
 // ==============================
 // Complete Task
 // ==============================
 
-window.completeTask = async function(taskId){
-    try{
-        const response = await axios.put( `${BASE_URL}/api/progress/complete/${taskId}`,
-            {},
-            {
-                withCredentials:true
-            }
-        );
+window.completeTask = async function (taskId) {
+  try {
+    const response = await axios.put(
+      `${BASE_URL}/api/progress/complete/${taskId}`,
+      {},
+      {
+        withCredentials: true,
+      },
+    );
 
-        alert(response.data.message);
-        getTasks();
-    }
-    catch(error){
-        alert(error.response.data.message);
-    }
+    alert(response.data.message);
+    getTasks();
+  } catch (error) {
+    alert(error.response.data.message);
+  }
 };
-
 
 // ==============================
 // Logout
 // ==============================
 
-document.getElementById("logoutBtn").addEventListener("click", async ()=>{
-    try{
-        await axios.post( `${BASE_URL}/api/logout`,{},
-            {
-                withCredentials:true
-            }
-        );
-        window.location.href="login.html";
-    }
-    catch(error){
-        console.log(error);
-    }
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+  try {
+    await axios.post(
+      `${BASE_URL}/api/logout`,
+      {},
+      {
+        withCredentials: true,
+      },
+    );
+    window.location.href = "login.html";
+  } catch (error) {
+    console.log(error);
+  }
 });

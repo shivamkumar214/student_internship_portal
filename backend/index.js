@@ -18,15 +18,17 @@ const app = express();
 import connectDB from "./config/db.js";
 connectDB();
 
-app.use(cors({
-    origin: "http://127.0.0.1:5501",
-    credentials: true
-}));
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5501", "http://127.0.0.1:5502"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // app.use(
-//   fileUpload({  
+//   fileUpload({
 //     useTempFiles: true,
 //     tempFileDir: "./uploads/",
 //   })
@@ -43,7 +45,6 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/progress", progressRoutes);
 app.use("/api/admin", adminRoutes);
 
-
 app.post("/api/logout", (req, res) => {
   res.clearCookie("token");
   res.status(200).json({
@@ -51,7 +52,6 @@ app.post("/api/logout", (req, res) => {
     message: "Logout Successfully",
   });
 });
-
 
 const PORT = process.env.PORT || 1000;
 

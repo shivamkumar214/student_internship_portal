@@ -76,103 +76,81 @@
     </footer>
 
     <!-- Axios CDN -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="../js/daily_progress.js"></script>
     <script type="module" src="../js/daily_progress.js"></script>
   </body>
-</html> --> -->
+</html> -->
+-->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Daily Progress | Student Internship Portal</title>
 
-    <link rel="stylesheet" href="../css/daily_progress.css">
+    <link rel="stylesheet" href="../css/daily_progress.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>🎓 SIP</h2>
+          <p>Student Internship Portal</p>
+        </div>
 
-        <nav class="navbar">
-
-            <div class="logo">
-                <h2>🎓 SIP</h2>
-                <p>Student Internship Portal</p>
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="upload_resume.html">Resume</a></li>
-                <li><a href="assigned_tasks.html">Tasks</a></li>
-                <li><a href="daily_progress.html">Progress</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#" id="logoutBtn">Logout</a></li>
-            </ul>
-
-        </nav>
-
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="upload_resume.html">Resume</a></li>
+          <li><a href="assigned_tasks.html">Tasks</a></li>
+          <li><a href="daily_progress.html">Progress</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="progress-section">
+      <div class="progress-card">
+        <h1>Completed Tasks</h1>
 
-        <div class="progress-card">
+        <p>View all tasks you have completed during your internship.</p>
 
-            <h1>Completed Tasks</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Description</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Completed On</th>
+            </tr>
+          </thead>
 
-            <p>
-                View all tasks you have completed during your internship.
-            </p>
+          <tbody id="progressTableBody">
+            <!-- Data will come from Backend -->
+          </tbody>
+        </table>
 
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Task</th>
-                        <th>Description</th>
-                        <th>Deadline</th>
-                        <th>Status</th>
-                        <th>Completed On</th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="progressTableBody">
-
-                    <!-- Data will come from Backend -->
-
-                </tbody>
-
-            </table>
-
-            <p id="noProgress" style="display:none; text-align:center; margin-top:20px;">
-                No Completed Tasks Yet.
-            </p>
-
-        </div>
-
+        <p
+          id="noProgress"
+          style="display: none; text-align: center; margin-top: 20px">
+          No Completed Tasks Yet.
+        </p>
+      </div>
     </section>
 
     <footer>
-
-        <p>
-            © 2026 Student Internship Portal | All Rights Reserved
-        </p>
-
+      <p>© 2026 Student Internship Portal | All Rights Reserved</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="../js/daily_progress.js"></script>
     <script type="module" src="../js/daily_progress.js"></script>
-
-</body>
-
+  </body>
 </html>

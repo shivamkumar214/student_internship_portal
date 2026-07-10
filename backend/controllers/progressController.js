@@ -1,5 +1,3 @@
-import Progress from "../models/Progress.js";
-
 // export const startTask = async (req, res) => {
 //     try {
 //         const { taskId } = req.body;
@@ -41,6 +39,10 @@ import Progress from "../models/Progress.js";
 //         });
 //     }
 // };
+
+import Progress from "../models/Progress.js";
+import Task from "../models/Task.js";
+
 export const completeTask = async (req, res) => {
   try {
     const task = await Task.findOne({

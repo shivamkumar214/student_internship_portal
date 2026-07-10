@@ -212,135 +212,274 @@ footer {
    Students Section
 =========================== */
 
-.students-section{
+.students-section {
+  margin-top: 40px;
 
-    margin-top:40px;
+  background: #fff;
 
-    background:#fff;
+  padding: 25px;
 
-    padding:25px;
+  border-radius: 10px;
 
-    border-radius:10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-
-    overflow-x:auto;
-
+  overflow-x: auto;
 }
 
-.students-section h2{
+.students-section h2 {
+  color: #828892;
 
-    color:#828892;
+  margin-bottom: 20px;
 
-    margin-bottom:20px;
-
-    font-size:24px;
-
+  font-size: 24px;
 }
 
 /* ===========================
    Table
 =========================== */
 
-.students-section table{
+.students-section table {
+  width: 100%;
 
-    width:100%;
-
-    border-collapse:collapse;
-
+  border-collapse: collapse;
 }
 
-.students-section th{
+.students-section th {
+  background: rgba(198, 2, 237, 0.947);
 
-    background:rgba(198, 2, 237, 0.947);
+  color: white;
 
-    color:white;
+  padding: 14px;
 
-    padding:14px;
+  text-align: center;
 
-    text-align:center;
-
-    font-size:15px;
-
+  font-size: 15px;
 }
 
-.students-section td{
+.students-section td {
+  padding: 14px;
 
-    padding:14px;
+  text-align: center;
 
-    text-align:center;
+  border-bottom: 1px solid #ddd;
 
-    border-bottom:1px solid #ddd;
-
-    font-size:15px;
-
+  font-size: 15px;
 }
 
-.students-section tr:nth-child(even){
-
-    background:#f8f9fa;
-
+.students-section tr:nth-child(even) {
+  background: #f8f9fa;
 }
 
-.students-section tr:hover{
+.students-section tr:hover {
+  background: #eef4ff;
 
-    background:#eef4ff;
-
-    transition:0.3s;
-
+  transition: 0.3s;
 }
 
 /* ===========================
    Buttons
 =========================== */
 
-.students-section button{
+.students-section button {
+  border: none;
 
-    border:none;
+  outline: none;
 
-    outline:none;
+  background: rgb(120, 120, 229);
 
-    background:rgb(120, 120, 229);
+  color: white;
 
-    color:white;
+  padding: 8px 14px;
 
-    padding:8px 14px;
+  border-radius: 5px;
 
-    border-radius:5px;
+  cursor: pointer;
 
-    cursor:pointer;
+  transition: 0.3s;
 
-    transition:0.3s;
-
-    font-size:14px;
-
+  font-size: 14px;
 }
 
-.students-section button:hover{
-
-    background:SaddleBrown;
-
+.students-section button:hover {
+  background: SaddleBrown;
 }
 
 /* Resume Not Uploaded */
 
-.students-section span{
+.students-section span {
+  color: rgb(251, 6, 6);
 
-    color:rgb(251, 6, 6);
-
-    font-weight:bold;
-
+  font-weight: bold;
 }
 
 /* ===========================
    Responsive
 =========================== */
 
-@media(max-width:768px){
-    .students-section{
-        padding:15px;
-    }
-    .students-section table{
-        min-width:700px;
-    }
+@media (max-width: 768px) {
+  .students-section {
+    padding: 15px;
+  }
+  .students-section table {
+    min-width: 700px;
+  }
+}
+
+/* ===========================
+   Task Modal
+=========================== */
+
+.modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 500px;
+
+  background: #fff;
+
+  padding: 30px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  text-align: center;
+
+  color: #0d6efd;
+
+  margin-bottom: 25px;
+}
+
+.modal-content form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.modal-content label {
+  margin-top: 15px;
+
+  margin-bottom: 6px;
+
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #0d6efd;
+}
+
+.modal-content textarea {
+  resize: vertical;
+}
+
+.modal-content button {
+  margin-top: 20px;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.modal-content button[type="submit"] {
+  background: #0d6efd;
+
+  color: white;
+}
+
+.modal-content button[type="submit"]:hover {
+  background: #0b5ed7;
+}
+
+#closeModal {
+  background: #dc3545;
+
+  color: white;
+}
+
+#closeModal:hover {
+  background: #bb2d3b;
+}
+
+.progress-section {
+  margin-top: 40px;
+
+  background: #fff;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  overflow-x: auto;
+}
+
+.progress-section h2 {
+  color: #0d6efd;
+
+  margin-bottom: 20px;
+}
+
+.progress-section table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.progress-section th {
+  background: #0d6efd;
+
+  color: #fff;
+
+  padding: 14px;
+}
+
+.progress-section td {
+  padding: 14px;
+
+  text-align: center;
+
+  border-bottom: 1px solid #ddd;
 }

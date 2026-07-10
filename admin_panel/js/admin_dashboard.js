@@ -194,7 +194,6 @@
 //   }
 // });
 
-
 import { BASE_URL } from "../../js/config.js";
 
 const studentTableBody = document.getElementById("studentTableBody");
@@ -213,70 +212,52 @@ const taskForm = document.getElementById("taskForm");
 // ==============================
 
 async function getDashboard() {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/api/admin/dashboard`,
 
-    try {
+      {
+        withCredentials: true,
+      },
+    );
 
-        const response = await axios.get(
-
-            `${BASE_URL}/api/admin/dashboard`,
-
-            {
-                withCredentials: true
-            }
-
-        );
-
-        taskCount.innerText = response.data.totalTasks;
-        completedCount.innerText = response.data.completedTasks;
-
-    }
-
-    catch (error) {
-
-        console.log(error);
-
-    }
-
+    taskCount.innerText = response.data.totalTasks;
+    completedCount.innerText = response.data.completedTasks;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getDashboard();
-
 
 // ==============================
 // Get All Students
 // ==============================
 
 async function getStudents() {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/api/admin/users`,
 
-    try {
+      {
+        withCredentials: true,
+      },
+    );
 
-        const response = await axios.get(
+    const students = response.data.users;
 
-            `${BASE_URL}/api/admin/users`,
+    studentCount.innerText = response.data.totalStudents;
 
-            {
-                withCredentials: true
-            }
+    let uploadedResume = 0;
 
-        );
+    studentTableBody.innerHTML = "";
 
-        const students = response.data.users;
+    students.forEach((student) => {
+      if (student.resume) {
+        uploadedResume++;
+      }
 
-        studentCount.innerText = response.data.totalStudents;
-
-        let uploadedResume = 0;
-
-        studentTableBody.innerHTML = "";
-
-        students.forEach(student => {
-
-            if (student.resume) {
-
-                uploadedResume++;
-
-            }
-
-            studentTableBody.innerHTML += `
+      studentTableBody.innerHTML += `
 
             <tr>
 
@@ -287,19 +268,13 @@ async function getStudents() {
                 <td>
 
                 ${
-                    student.resume
-                    ?
-
-                    `<button onclick="viewResume('${student._id}')">
+                  student.resume
+                    ? `<button onclick="viewResume('${student._id}')">
 
                     View Resume
 
                     </button>`
-
-                    :
-
-                    `<span>Not Uploaded</span>`
-
+                    : `<span>Not Uploaded</span>`
                 }
 
                 </td>
@@ -327,60 +302,38 @@ async function getStudents() {
             </tr>
 
             `;
+    });
 
-        });
-
-        resumeCount.innerText = uploadedResume;
-
-    }
-
-    catch (error) {
-
-        console.log(error);
-
-    }
-
+    resumeCount.innerText = uploadedResume;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getStudents();
-
 
 // ==============================
 // View Resume
 // ==============================
 
-window.viewResume = async function(id){
+window.viewResume = async function (id) {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/api/admin/user/${id}`,
 
-    try{
+      {
+        withCredentials: true,
+      },
+    );
 
-        const response = await axios.get(
+    window.open(
+      response.data.user.resume,
 
-            `${BASE_URL}/api/admin/user/${id}`,
-
-            {
-
-                withCredentials:true
-
-            }
-
-        );
-
-        window.open(
-
-            response.data.user.resume,
-
-            "_blank"
-
-        );
-
-    }
-
-    catch(error){
-
-        console.log(error);
-
-    }
-
+      "_blank",
+    );
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // ==============================
@@ -388,151 +341,133 @@ window.viewResume = async function(id){
 // ==============================
 
 window.openTaskModal = function (id) {
+  document.getElementById("studentId").value = id;
 
-    document.getElementById("studentId").value = id;
-
-    taskModal.style.display = "block";
-
+  taskModal.style.display = "block";
 };
-
 
 // ==============================
 // Close Modal
 // ==============================
 
 closeModal.addEventListener("click", () => {
+  taskModal.style.display = "none";
 
-    taskModal.style.display = "none";
-
-    taskForm.reset();
-
+  taskForm.reset();
 });
-
 
 // ==============================
 // Assign Task
 // ==============================
 
 taskForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
+  try {
+    const response = await axios.post(
+      `${BASE_URL}/api/admin/assign-task/${document.getElementById("studentId").value}`,
 
-    try {
+      {
+        title: document.getElementById("title").value,
+        description: document.getElementById("description").value,
+        deadline: document.getElementById("deadline").value,
+      },
 
-        const response = await axios.post(
+      {
+        withCredentials: true,
+      },
+    );
 
-            `${BASE_URL}/api/admin/assign-task/${document.getElementById("studentId").value}`,
+    alert(response.data.message);
 
-            {
-                title: document.getElementById("title").value,
-                description: document.getElementById("description").value,
-                deadline: document.getElementById("deadline").value
-            },
+    taskModal.style.display = "none";
 
-            {
-                withCredentials: true
-            }
+    taskForm.reset();
 
-        );
-
-        alert(response.data.message);
-
-        taskModal.style.display = "none";
-
-        taskForm.reset();
-
-        getDashboard();
-
-    }
-
-    catch (error) {
-
-        alert(error.response?.data?.message || error.message);
-
-    }
-
+    getDashboard();
+  } catch (error) {
+    alert(error.response?.data?.message || error.message);
+  }
 });
-
 
 // ==============================
 // View Student Progress
 // ==============================
 
+const progressTableBody = document.getElementById("progressTableBody");
+
+const noCompletedTask = document.getElementById("noCompletedTask");
+
 window.viewProgress = async function (userId) {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/api/admin/progress/${userId}`,
 
-    try {
+      {
+        withCredentials: true,
+      },
+    );
 
-        const response = await axios.get(
+    progressTableBody.innerHTML = "";
 
-            `${BASE_URL}/api/admin/progress/${userId}`,
+    if (response.data.progress.length === 0) {
+      noCompletedTask.style.display = "block";
 
-            {
-                withCredentials: true
-            }
-
-        );
-
-        if (response.data.progress.length === 0) {
-
-            alert("No Progress Found");
-
-            return;
-
-        }
-
-        let message = "";
-
-        response.data.progress.forEach((item, index) => {
-
-            message += `${index + 1}. ${item.taskId.title}\n`;
-            message += `Status : ${item.status}\n`;
-
-            if (item.completedAt) {
-
-                message += `Completed : ${new Date(item.completedAt).toLocaleDateString()}\n`;
-
-            }
-
-            message += "\n";
-
-        });
-
-        alert(message);
-
+      return;
     }
 
-    catch (error) {
+    noCompletedTask.style.display = "none";
 
-        console.log(error);
+    response.data.progress.forEach((item) => {
+      progressTableBody.innerHTML += `
 
-    }
+            <tr>
 
+                <td>${item.taskId.title}</td>
+
+                <td>${item.status}</td>
+
+                <td>
+
+                ${
+                  item.completedAt
+                    ? new Date(item.completedAt).toLocaleDateString()
+                    : "--"
+                }
+
+                </td>
+
+            </tr>
+
+            `;
+    });
+
+    document.querySelector(".progress-section").scrollIntoView({
+      behavior: "smooth",
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
-
 
 // ==============================
 // Logout
 // ==============================
 
 document.getElementById("logoutBtn").addEventListener("click", async () => {
+  try {
+    await axios.post(
+      `${BASE_URL}/api/logout`,
 
-    try {
+      {},
 
-        await axios.post(
+      {
+        withCredentials: true,
+      },
+    );
 
-            `${BASE_URL}/api/logout`,
-
-            {},
-
-            {
-                withCredentials: true
-            }
-
-        );
-
-        window.location.href = "admin_login.html";
-    }
-    catch (error) {
-        console.log(error);
-    }
+    window.location.href = "admin_login.html";
+  } catch (error) {
+    console.log(error);
+  }
 });
