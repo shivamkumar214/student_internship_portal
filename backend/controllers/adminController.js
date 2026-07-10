@@ -4,7 +4,7 @@ import Progress from "../models/Progress.js";
 
 export const getAllUsers = async (req, res) => {
   try {
-    console.log("getAllUsers")
+    console.log("getAllUsers")   
     const users = await User.find({
       role: "student",
     }).select("-password");
