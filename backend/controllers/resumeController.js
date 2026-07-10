@@ -24,6 +24,7 @@ export const uploadResume = async (req, res) => {
 
     const result = await cloudinary.uploader.upload(resume.path, {
       folder: "Temporary-Student-Resume",
+      resource_type: "image",
     });
 
     console.log(result.public_id);
@@ -34,7 +35,7 @@ export const uploadResume = async (req, res) => {
     user.resume = result.secure_url;
     user.resumePublicId = result.public_id;
 
-    console.log("result.secure_url: ",result.secure_url);
+    console.log("result.secure_url: ", result.secure_url);
 
     await user.save();
 
