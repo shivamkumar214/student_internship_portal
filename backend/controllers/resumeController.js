@@ -13,6 +13,9 @@ export const uploadResume = async (req, res) => {
 
     const resume = req.file;
     const user = await User.findById(req.userId);
+    console.log("resume.path:", resume.path);
+    console.log("File exists:", fs.existsSync(resume.path));
+    console.log("Current cwd:", process.cwd());
 
     // Delete old Resume
     if (user.resumePublicId) {
@@ -24,6 +27,10 @@ export const uploadResume = async (req, res) => {
     const result = await cloudinary.uploader.upload(resume.path, {
       folder: "Temporary-Student-Resume",
     });
+
+    console.log(result.public_id);
+    console.log(result.resource_type);
+    console.log(result.format);
 
     // user.resume = result.secure_url;
     user.resume = result.secure_url.replace("/upload/", "/upload/f_auto/");
