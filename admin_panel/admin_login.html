@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
 
 <title>Admin Login | Student Internship Portal</title>
 
-<link rel="stylesheet" href="admin_login.css">
+<link rel="stylesheet" href="./admin_login.css">
 
 </head>
 
@@ -97,6 +97,124 @@ Login
 </footer>
 
 <script src="js/admin_login.js"></script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Student Internship Portal</title>
+
+    <link rel="stylesheet" href="css/admin_login.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>🛡️ SIP Admin</h2>
+                <p>Student Internship Portal</p>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="../frontend/index.html">Home</a></li>
+                <li><a href="../frontend/index.html#about">About</a></li>
+                <li><a href="../frontend/register.html">Student Register</a></li>
+                <li><a href="../frontend/login.html">Student Login</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section class="login-page">
+
+        <div class="login-box">
+
+            <div class="login-header">
+
+                <div class="admin-icon">
+                    🛡️
+                </div>
+
+                <h1>Admin Login</h1>
+
+                <p>
+                    Login to manage students, resumes and internship tasks.
+                </p>
+
+            </div>
+
+            <form id="loginForm">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter Admin Email"
+                    required>
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    required>
+
+                <button type="submit">
+
+                    Login
+
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+            <div class="login-footer">
+
+                <a href="../frontend/login.html">
+
+                    ← Back to Student Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+
+            © 2026 Student Internship Portal | Admin Panel
+
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="js/admin_login.js"></script>
+    <script src="js/admin_login.js"></script>
 
 </body>
 

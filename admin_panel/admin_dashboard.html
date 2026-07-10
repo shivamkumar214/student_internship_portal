@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -190,6 +190,215 @@ Open
 </footer>
 
 <script src="admin_dashboard.js"></script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Student Internship Portal</title>
+
+    <link rel="stylesheet" href="css/admin_dashboard.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>🛡️ SIP Admin</h2>
+                <p>Student Internship Portal</p>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="admin_dashboard.html">Dashboard</a></li>
+                <li><a href="#students">Students</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section class="dashboard">
+
+        <div class="welcome">
+
+            <h1>Welcome Admin 👋</h1>
+
+            <p>
+
+                Manage students, assign internship tasks and monitor their progress.
+
+            </p>
+
+        </div>
+
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <h2>Quick Summary</h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <h3>👨‍🎓 Students</h3>
+
+                    <p id="studentCount">0</p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>📄 Resumes</h3>
+
+                    <p id="resumeCount">0</p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>📋 Tasks</h3>
+
+                    <p id="taskCount">0</p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>✅ Completed</h3>
+
+                    <p id="completedCount">0</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Students -->
+
+        <div class="students-section" id="students">
+
+            <h2>Registered Students</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Resume</th>
+
+                        <th>Assign Task</th>
+
+                        <th>Completed Tasks</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentTableBody">
+
+                    <!-- Backend Data -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Assign Task Modal -->
+
+    <div id="taskModal" class="modal" style="display:none;">
+
+        <div class="modal-content">
+
+            <h2>Assign Task</h2>
+
+            <form id="taskForm">
+
+                <input
+                    type="hidden"
+                    id="studentId">
+
+                <label>Task Title</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    required>
+
+                <label>Description</label>
+
+                <textarea
+                    id="description"
+                    rows="4"
+                    required></textarea>
+
+                <label>Deadline</label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                    required>
+
+                <button type="submit">
+
+                    Assign Task
+
+                </button>
+
+                <button
+                    type="button"
+                    id="closeModal">
+
+                    Cancel
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+
+            © 2026 Student Internship Portal | Admin Panel
+
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="js/admin_dashboard.js"></script>
+    <script src="js/admin_dashboard.js"></script>
 
 </body>
 

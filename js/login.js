@@ -24,7 +24,7 @@
 
 // }
 
-
+import {BASE_URL} from "./config.js";
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", async (e) => {
@@ -37,7 +37,7 @@ loginForm.addEventListener("submit", async (e) => {
     try {
 
         const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            `${BASE_URL}/api/auth/login`,
             {
                 email,
                 password
@@ -47,7 +47,8 @@ loginForm.addEventListener("submit", async (e) => {
             }
         );
 
-        alert(response.data.message);
+        // alert(response.data.message);
+        // console.log("aaaaaaaaaaaaaaaaaa");
 
         window.location.href = "dashboard.html";
 

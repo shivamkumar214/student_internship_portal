@@ -1,8 +1,6 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -10,8 +8,7 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Dashboard | Student Internship Portal</title>
 
-<link rel="stylesheet"
-href="css/dashboard.css">
+<link rel="stylesheet" href="../css/dashboard.css">
 
 </head>
 
@@ -41,7 +38,7 @@ href="css/dashboard.css">
 
 <li><a href="profile.html">Profile</a></li>
 
-<li><a href="login.html">Logout</a></li>
+<li><a href="#" id="logoutBtn">Logout</a></li>
 
 </ul>
 
@@ -195,7 +192,142 @@ Open
 
 </footer>
 
-<script src="js/dashboard.js"></script>
+<script src="../js/dashboard.js"></script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Student Internship Portal</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>🎓 SIP</h2>
+                <p>Student Internship Portal</p>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="upload_resume.html">Resume</a></li>
+                <li><a href="assigned_tasks.html">Tasks</a></li>
+                <li><a href="daily_progress.html">Progress</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Dashboard -->
+
+    <section class="dashboard">
+
+        <div class="welcome">
+
+            <h1>Welcome, <span id="studentName">Student</span> 👋</h1>
+
+            <p>
+                Manage your internship activities from one place.
+            </p>
+
+        </div>
+
+        <!-- Dashboard Cards -->
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2>📄 Resume</h2>
+                <p>Upload and manage your latest resume.</p>
+                <a href="upload_resume.html" class="card-btn">
+                    Upload Resume
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>📋 Assigned Tasks</h2>
+                <p>View internship tasks assigned by Admin.</p>
+                <a href="assigned_tasks.html" class="card-btn">
+                    View Tasks
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>📝 Progress</h2>
+                <p>View completed internship tasks.</p>
+                <a href="daily_progress.html" class="card-btn">
+                    View Progress
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>👤 Profile</h2>
+                <p>View and update your profile.</p>
+                <a href="profile.html" class="card-btn">
+                    Open Profile
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <h2>Quick Summary</h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <h3>📄 Resume</h3>
+                    <p id="resumeStatus">Not Uploaded?</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>📋 Assigned Tasks</h3>
+                    <p id="taskCount">0 Assigned</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>✅ Completed</h3>
+                    <p id="completedCount">0 Completed</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>👤 Profile</h3>
+                    <p id="profileStatus">Complete</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 Student Internship Portal | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
 
 </body>
 

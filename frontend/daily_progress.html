@@ -1,90 +1,177 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Daily Progress | Student Internship Portal</title>
+    <link rel="stylesheet" href="../css/daily_progress.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <h2>Internship Portal</h2>
+        <p>Track Your Internship Journey</p>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="view_tasks.html">Tasks</a></li>
+        <li><a href="daily_progress.html">Progress</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+
+    <section class="progress-section">
+      <div class="progress-card">
+        <span class="page-tag">Daily Internship Update</span>
+
+        <h2>Update Daily Progress</h2>
+
+        <p class="subtitle">
+          Record your daily internship activities and keep your mentor updated.
+        </p>
+
+        <form>
+          <div class="input-group">
+            <label>Date</label>
+            <input type="date" />
+          </div>
+
+          <div class="input-group">
+            <label>Task Title</label>
+            <input type="text" placeholder="Enter Task Title" />
+          </div>
+
+          <div class="input-group">
+            <label>Work Description</label>
+            <textarea rows="5" placeholder="Describe your work..."></textarea>
+          </div>
+
+          <div class="row">
+            <div class="input-group">
+              <label>Status</label>
+
+              <select>
+                <option>Select Status</option>
+                <option>Pending</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label>Hours Worked</label>
+              <input type="number" placeholder="e.g. 6" />
+            </div>
+          </div>
+
+          <button type="submit">Submit Progress</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Student Internship Portal | Designed for Students</p>
+    </footer>
+
+    <!-- Axios CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="../js/daily_progress.js"></script>
+    <script type="module" src="../js/daily_progress.js"></script>
+  </body>
+</html> --> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Daily Progress | Student Internship Portal</title>
-    <link rel="stylesheet" href="css/daily_progress.css">
+
+    <title>Daily Progress | Student Internship Portal</title>
+
+    <link rel="stylesheet" href="../css/daily_progress.css">
+
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <h2>Internship Portal</h2>
-            <p>Track Your Internship Journey</p>
-        </div>
+    <header>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view_tasks.html">Tasks</a></li>
-            <li><a href="daily_progress.html">Progress</a></li>
-            <li><a href="profile.html">Profile</a></li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>🎓 SIP</h2>
+                <p>Student Internship Portal</p>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="upload_resume.html">Resume</a></li>
+                <li><a href="assigned_tasks.html">Tasks</a></li>
+                <li><a href="daily_progress.html">Progress</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
 
     <section class="progress-section">
 
         <div class="progress-card">
 
-            <span class="page-tag">Daily Internship Update</span>
+            <h1>Completed Tasks</h1>
 
-            <h2>Update Daily Progress</h2>
-
-            <p class="subtitle">
-                Record your daily internship activities and keep your mentor updated.
+            <p>
+                View all tasks you have completed during your internship.
             </p>
 
-            <form>
+            <table>
 
-                <div class="input-group">
-                    <label>Date</label>
-                    <input type="date">
-                </div>
+                <thead>
 
-                <div class="input-group">
-                    <label>Task Title</label>
-                    <input type="text" placeholder="Enter Task Title">
-                </div>
+                    <tr>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Completed On</th>
+                    </tr>
 
-                <div class="input-group">
-                    <label>Work Description</label>
-                    <textarea rows="5" placeholder="Describe your work..."></textarea>
-                </div>
+                </thead>
 
-                <div class="row">
+                <tbody id="progressTableBody">
 
-                    <div class="input-group">
-                        <label>Status</label>
+                    <!-- Data will come from Backend -->
 
-                        <select>
-                            <option>Select Status</option>
-                            <option>Pending</option>
-                            <option>In Progress</option>
-                            <option>Completed</option>
-                        </select>
+                </tbody>
 
-                    </div>
+            </table>
 
-                    <div class="input-group">
-                        <label>Hours Worked</label>
-                        <input type="number" placeholder="e.g. 6">
-                    </div>
-
-                </div>
-
-                <button type="submit">Submit Progress</button>
-
-            </form>
+            <p id="noProgress" style="display:none; text-align:center; margin-top:20px;">
+                No Completed Tasks Yet.
+            </p>
 
         </div>
 
     </section>
 
     <footer>
-        <p>© 2026 Student Internship Portal | Designed for Students</p>
+
+        <p>
+            © 2026 Student Internship Portal | All Rights Reserved
+        </p>
+
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="../js/daily_progress.js"></script>
 
 </body>
 

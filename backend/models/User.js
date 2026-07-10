@@ -41,6 +41,11 @@ const userSchema = new mongoose.Schema({
     resumePublicId: {
         type: String,
         default: ""
+    },
+    role: {
+        type: String,
+        enum: ["student", "admin"],
+        default: "student"
     }
 
 }, { timestamps: true });

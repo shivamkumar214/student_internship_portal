@@ -147,6 +147,17 @@ button:hover{
     text-decoration:underline;
 }
 
+.login-footer a{
+    text-decoration: none;
+    font-size: medium;
+    padding: 2px 3px;
+}
+.login-footer a:hover{
+    text-decoration: underline;
+    background-color: #ddd;
+    font-size: medium;
+}
+
 /* ---------- FOOTER ---------- */
 
 footer{

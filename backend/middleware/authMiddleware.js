@@ -2,9 +2,11 @@ import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
     try {
-        // const token = req.headers.authorization;
-        
+        console.log("authMiddleware-------------------------------------")
+        console.log(req.cookies);
         const token = req.cookies.token
+        console.log("token from authMid", token) 
+        
         if (!token) {
             return res.status(401).json({
                 success: false,
@@ -14,12 +16,14 @@ const authMiddleware = (req, res, next) => {
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.userId = decoded.id;
-
+        req.userRole = decoded.role;
+        
         next();
     } catch (error) {
+        console.log("error is here: ", error)
         return res.status(401).json({
             success: false,
-            message: "Invalid Token"
+            message: "error"
         });
     }
 };

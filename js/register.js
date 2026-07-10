@@ -11,7 +11,7 @@
 //     }
 
 // });
-
+import {BASE_URL} from "./config.js";
 const registerForm = document.getElementById("registerForm");
 console.log("hello")
 registerForm.addEventListener("submit", async (e) => {
@@ -32,9 +32,9 @@ registerForm.addEventListener("submit", async (e) => {
     }
 
     try {
-
+        console.log("registerForm ")
         const response = await axios.post(
-            "http://localhost:5000/api/auth/signup",
+            `${BASE_URL}/api/auth/signup`,
             {
                 name,
                 email,
