@@ -20,7 +20,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: ["https://student-internship-portal.netlify.app"],
+    origin: ["https://student-internship-portal.netlify.app", "https://student-portal-adminp.netlify.app/"],
     credentials: true,
   }),
 );

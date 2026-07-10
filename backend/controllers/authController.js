@@ -3,12 +3,11 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const signup = async (req, res) => {
-
   console.log("signup page");
   try {
     const { name, email, phone, college, course, password } = req.body;
-    
-    console.log("for signup , ", email, password)
+
+    console.log("for signup , ", email, password);
 
     const existingUser = await User.findOne({ email });
 
@@ -31,7 +30,7 @@ export const signup = async (req, res) => {
       college,
       course,
       password: hashedPassword,
-      role: "student"
+      role: "student",
     });
 
     console.log("3");
@@ -40,17 +39,21 @@ export const signup = async (req, res) => {
 
     console.log("4");
 
-    const token = jwt.sign({ id: newUser._id , role: newUser.role}, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    const token = jwt.sign(
+      { id: newUser._id, role: newUser.role },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "7d",
+      },
+    );
 
     console.log("5", token);
 
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: 7 * 24 * 60 * 60 * 1000, //7day = 7*24hr*60mint*60sec*1000milliseconds
-      sameSite: "strict",
-      secure: false,
+      secure: true,
+      sameSite: "none",
+      maxAge: 7 * 24 * 60 * 60 * 1000, ////7day = 7*24hr*60mint*60sec*1000milliseconds
     });
 
     res.status(201).json({
@@ -69,7 +72,7 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    
+
     if (
       email == process.env.ADMIN_EMAIL &&
       password == process.env.ADMIN_PASSWORD
@@ -87,9 +90,9 @@ export const login = async (req, res) => {
 
       res.cookie("token", token, {
         httpOnly: true,
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-        sameSite: "strict",
-        secure: false,
+        secure: true,
+        sameSite: "none",
+        maxAge: 7 * 24 * 60 * 60 * 1000, ////7day = 7*24hr*60mint*60sec*1000milliseconds
       });
 
       return res.status(200).json({
@@ -117,22 +120,23 @@ export const login = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({
+    const token = jwt.sign(
+      {
         id: user._id,
-        role: user.role
+        role: user.role,
       },
       process.env.JWT_SECRET,
       {
-        expiresIn: "7d"
-      }
+        expiresIn: "7d",
+      },
     );
     const userData = await User.findById(user._id).select("-password");
 
     res.cookie("token", token, {
       httpOnly: true,
-      maxAge: 7 * 24 * 60 * 60 * 1000, //7days = 7*24hr *60mint*60sec*1000milliseconds
-      sameSite: "strict",
-      secure: false,
+      secure: true,
+      sameSite: "none",
+      maxAge: 7 * 24 * 60 * 60 * 1000, ////7day = 7*24hr*60mint*60sec*1000milliseconds
     });
 
     res.status(200).json({
@@ -142,7 +146,7 @@ export const login = async (req, res) => {
       userData,
     });
   } catch (error) {
-    console.log("catch error from authController while login")
+    console.log("catch error from authController while login");
     res.status(500).json({
       success: false,
       message: error.message,
