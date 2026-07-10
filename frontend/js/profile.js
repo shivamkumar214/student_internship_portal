@@ -1,8 +1,7 @@
 import { BASE_URL } from "./config.js";
 
-// ==========================
+
 // Get Profile
-// ==========================
 
 async function getProfile() {
 
@@ -40,10 +39,7 @@ async function getProfile() {
 getProfile();
 
 
-// ==========================
 // Logout
-// ==========================
-
 document.getElementById("logoutBtn").addEventListener("click", async () => {
 
     try {

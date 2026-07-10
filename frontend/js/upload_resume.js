@@ -1,26 +1,3 @@
-// import {BASE_URL} from "./config.js";
-
-// document.getElementById("resumeForm").addEventListener("submit",function(e){
-
-//     e.preventDefault();
-
-//     let file=document.getElementById("resume").files[0];
-
-//     if(!file){
-
-//         alert("Please select a resume.");
-
-//         return;
-
-//     }
-
-//     document.getElementById("statusText").textContent="Resume Ready to Upload";
-
-//     alert("Resume selected successfully!");
-
-// });
-
-// import { response } from "express";
 import { BASE_URL } from "./config.js";
 
 const resumeForm = document.getElementById("resumeForm");
@@ -28,10 +5,8 @@ const statusText = document.getElementById("statusText");
 const viewResumeBtn = document.getElementById("viewResumeBtn");
 const deleteResumeBtn = document.getElementById("deleteResumeBtn");
 
-// ==============================
-// Get Profile
-// ==============================
 
+// Get Profile
 async function getProfile() {
   try {
     console.log("getProfile from upload_resume.js");
@@ -55,10 +30,9 @@ async function getProfile() {
 
 getProfile();
 
-// ==============================
-// Upload Resume
-// ==============================
 
+
+// Upload Resume
 resumeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const file = document.getElementById("resume").files[0];
@@ -80,7 +54,7 @@ resumeForm.addEventListener("submit", async (e) => {
     alert(response.data.message);
 
     // getProfile();
-    // resumeForm.reset();
+    resumeForm.reset();
   } catch (error) {
     console.log("errrpr", error);
     console.log(error.response);
@@ -89,10 +63,8 @@ resumeForm.addEventListener("submit", async (e) => {
   }
 });
 
-// ==============================
-// Delete Resume
-// ==============================
 
+// Delete Resume
 deleteResumeBtn.addEventListener("click", async () => {
   try {
     const response = await axios.delete(`${BASE_URL}/api/resume/delete`, {
@@ -107,10 +79,8 @@ deleteResumeBtn.addEventListener("click", async () => {
   }
 });
 
-// ==============================
-// Logout
-// ==============================
 
+// Logout
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   try {
     await axios.post(

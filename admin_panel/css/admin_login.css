@@ -13,7 +13,7 @@ body{
     min-height:100vh;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ---------- NAVBAR -------------- */
 
 .navbar{
     display:flex;
@@ -170,8 +170,6 @@ footer{
 footer p{
     margin:0;
 }
-
-/* ---------- RESPONSIVE ---------- */
 
 @media(max-width:768px){
 

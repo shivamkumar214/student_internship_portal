@@ -1,14 +1,10 @@
-// console.log("Assigned Tasks Loaded Successfully");
-// import {BASE_URL} from "./config.js";
 import { BASE_URL } from "./config.js";
 
 const taskTableBody = document.getElementById("taskTableBody");
 const noTasks = document.getElementById("noTasks");
 
-// ==============================
-// Get Assigned Tasks
-// ==============================
 
+// Get Assigned Tasks
 async function getTasks() {
   try {
     const response = await axios.get(`${BASE_URL}/api/tasks`, {
@@ -57,10 +53,8 @@ async function getTasks() {
 
 getTasks();
 
-// ==============================
-// Complete Task
-// ==============================
 
+// Complete Task
 window.completeTask = async function (taskId) {
   try {
     const response = await axios.put(
@@ -78,10 +72,8 @@ window.completeTask = async function (taskId) {
   }
 };
 
-// ==============================
-// Logout
-// ==============================
 
+// Logout
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   try {
     await axios.post(

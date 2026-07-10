@@ -14,7 +14,7 @@ export const uploadResume = async (req, res) => {
     const resume = req.file;
     const user = await User.findById(req.userId);
 
-    // Delete Old Resume
+    // Delete old Resume
     if (user.resumePublicId) {
       await cloudinary.uploader.destroy(user.resumePublicId, {
         resource_type: "raw",

@@ -1,200 +1,4 @@
-// console.log("Dashboard Loaded Successfully");
-// import { BASE_URL } from "../../js/config.js";
-
-// const studentTableBody = document.getElementById("studentTableBody");
-
-// const studentCount = document.getElementById("studentCount");
-// const resumeCount = document.getElementById("resumeCount");
-// const taskCount = document.getElementById("taskCount");
-// const completedCount = document.getElementById("completedCount");
-
-// const taskModal = document.getElementById("taskModal");
-// const closeModal = document.getElementById("closeModal");
-// const taskForm = document.getElementById("taskForm");
-
-// // ===================================
-// // Get All Students
-// // ===================================
-
-// async function getStudents() {
-//   try {
-//     const response = await axios.get(`${BASE_URL}/api/admin/users`, {
-//       withCredentials: true,
-//     });
-
-//     const students = response.data.users;
-
-//     studentCount.innerText = response.data.totalStudents;
-
-//     let resumeUploaded = 0;
-
-//     studentTableBody.innerHTML = "";
-
-//     students.forEach((student) => {
-//       if (student.resume) {
-//         resumeUploaded++;
-//       }
-
-//       studentTableBody.innerHTML += `
-
-//             <tr>
-
-//                 <td>${student.name}</td>
-
-//                 <td>${student.email}</td>
-
-//                 <td>
-
-//                     <button onclick="viewResume('${student.resume}')">
-
-//                         View Resume
-
-//                     </button>
-
-//                 </td>
-
-//                 <td>
-
-//                     <button onclick="openTaskModal('${student._id}')">
-
-//                         Assign Task
-
-//                     </button>
-
-//                 </td>
-
-//                 <td>
-
-//                     <button onclick="viewProgress('${student._id}')">
-
-//                         View
-
-//                     </button>
-
-//                 </td>
-
-//             </tr>
-
-//             `;
-//     });
-
-//     resumeCount.innerText = resumeUploaded;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// getStudents();
-
-// // ===================================
-// // View Resume
-// // ===================================
-
-// window.viewResume = function (resume) {
-//   if (!resume) {
-//     alert("Resume Not Uploaded");
-
-//     return;
-//   }
-
-//   window.open(resume, "_blank");
-// };
-
-// // ===================================
-// // Open Modal
-// // ===================================
-
-// window.openTaskModal = function (id) {
-//   document.getElementById("studentId").value = id;
-
-//   taskModal.style.display = "block";
-// };
-
-// // ===================================
-// // Close Modal
-// // ===================================
-
-// closeModal.onclick = () => {
-//   taskModal.style.display = "none";
-// };
-
-// // ===================================
-// // Assign Task
-// // ===================================
-
-// taskForm.addEventListener("submit", async (e) => {
-//   e.preventDefault();
-
-//   try {
-//     const response = await axios.post(
-//       `${BASE_URL}/api/admin/assign-task/${document.getElementById("studentId").value}`,
-
-//       {
-//         title: document.getElementById("title").value,
-//         description: document.getElementById("description").value,
-//         deadline: document.getElementById("deadline").value,
-//       },
-
-//       {
-//         withCredentials: true,
-//       },
-//     );
-
-//     alert(response.data.message);
-
-//     taskModal.style.display = "none";
-
-//     taskForm.reset();
-//   } catch (error) {
-//     alert(error.response.data.message);
-//   }
-// });
-
-// // ===================================
-// // View Progress
-// // ===================================
-
-// window.viewProgress = async function (userId) {
-//   try {
-//     const response = await axios.get(
-//       `${BASE_URL}/api/admin/progress/${userId}`,
-//       {
-//         withCredentials: true,
-//       },
-//     );
-
-//     taskCount.innerText = response.data.totalTasks;
-//     completedCount.innerText = response.data.completedTasks;
-
-//     alert("Completed Tasks : " + response.data.progress.length);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// // ===================================
-// // Logout
-// // ===================================
-
-// document.getElementById("logoutBtn").addEventListener("click", async () => {
-//   try {
-//     await axios.post(
-//       `${BASE_URL}/api/logout`,
-
-//       {},
-
-//       {
-//         withCredentials: true,
-//       },
-//     );
-
-//     window.location.href = "admin_login.html";
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
-
-import { BASE_URL } from "../../js/config.js";
+import { BASE_URL } from "../../frontend/js/config.js";
 
 const studentTableBody = document.getElementById("studentTableBody");
 
@@ -207,10 +11,7 @@ const taskModal = document.getElementById("taskModal");
 const closeModal = document.getElementById("closeModal");
 const taskForm = document.getElementById("taskForm");
 
-// ==============================
 // Dashboard Summary
-// ==============================
-
 async function getDashboard() {
   try {
     const response = await axios.get(
@@ -230,10 +31,7 @@ async function getDashboard() {
 
 getDashboard();
 
-// ==============================
-// Get All Students
-// ==============================
-
+// Get all students
 async function getStudents() {
   try {
     const response = await axios.get(
@@ -312,10 +110,7 @@ async function getStudents() {
 
 getStudents();
 
-// ==============================
 // View Resume
-// ==============================
-
 window.viewResume = async function (id) {
   try {
     const response = await axios.get(
@@ -336,30 +131,21 @@ window.viewResume = async function (id) {
   }
 };
 
-// ==============================
 // Open Assign Task Modal
-// ==============================
-
 window.openTaskModal = function (id) {
   document.getElementById("studentId").value = id;
 
   taskModal.style.display = "block";
 };
 
-// ==============================
 // Close Modal
-// ==============================
-
 closeModal.addEventListener("click", () => {
   taskModal.style.display = "none";
 
   taskForm.reset();
 });
 
-// ==============================
 // Assign Task
-// ==============================
-
 taskForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -390,10 +176,7 @@ taskForm.addEventListener("submit", async (e) => {
   }
 });
 
-// ==============================
 // View Student Progress
-// ==============================
-
 const progressTableBody = document.getElementById("progressTableBody");
 
 const noCompletedTask = document.getElementById("noCompletedTask");
@@ -450,10 +233,7 @@ window.viewProgress = async function (userId) {
   }
 };
 
-// ==============================
 // Logout
-// ==============================
-
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   try {
     await axios.post(

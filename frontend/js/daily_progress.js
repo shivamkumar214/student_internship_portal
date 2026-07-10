@@ -1,14 +1,10 @@
-// import {BASE_URL} from "./config.js";
-
 import { BASE_URL } from "./config.js";
 
 const progressTableBody = document.getElementById("progressTableBody");
 const noProgress = document.getElementById("noProgress");
 
-// =================================
-// Get Completed Tasks
-// =================================
 
+// Get Completed Tasks
 async function getProgress() {
   try {
     const response = await axios.get(
@@ -64,10 +60,8 @@ async function getProgress() {
 
 getProgress();
 
-// =================================
-// Logout
-// =================================
 
+// Logout
 document.getElementById("logoutBtn").addEventListener("click", async () => {
   try {
     await axios.post(

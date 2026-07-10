@@ -24,10 +24,7 @@ async function getProfile() {
     }
 }
 
-// ==========================
 // Get Assigned Tasks
-// ==========================
-
 async function getTasks() {
 
     try {
@@ -49,10 +46,8 @@ async function getTasks() {
 
 }
 
-// ==========================
-// Get Completed Tasks
-// ==========================
 
+// Get Completed Tasks
 async function getProgress() {
 
     try {
@@ -79,10 +74,8 @@ async function getProgress() {
 
 }
 
-// ==========================
-// Logout
-// ==========================
 
+// Logout
 document.getElementById("logoutBtn").addEventListener("click", async () => {
 
     try {
@@ -106,10 +99,6 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
     }
 
 });
-
-// ==========================
-// Function Calls
-// ==========================
 
 getProfile();
 getTasks();

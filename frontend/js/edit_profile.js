@@ -2,9 +2,8 @@ import { BASE_URL } from "./config.js";
 
 const form = document.getElementById("editProfileForm");
 
-// ==========================
-// Get Profile
-// ==========================
+
+// Get profile
 
 async function getProfile() {
 
@@ -36,10 +35,7 @@ async function getProfile() {
 getProfile();
 
 
-// ==========================
-// Update Profile
-// ==========================
-
+// Update profile
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
@@ -76,10 +72,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 
-// ==========================
 // Logout
-// ==========================
-
 document.getElementById("logoutBtn").addEventListener("click", async () => {
 
     try {
