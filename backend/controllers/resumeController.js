@@ -31,8 +31,10 @@ export const uploadResume = async (req, res) => {
     console.log(result.format);
 
     // user.resume = result.secure_url;
-    user.resume = result.secure_url.replace("/upload/", "/upload/f_auto/");
+    user.resume = result.secure_url;
     user.resumePublicId = result.public_id;
+
+    console.log("result.secure_url: ",result.secure_url);
 
     await user.save();
 
