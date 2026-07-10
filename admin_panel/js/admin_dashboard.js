@@ -1,4 +1,5 @@
-import { BASE_URL } from "../../frontend/js/config.js";
+// import { BASE_URL } from "../../frontend/js/config.js";
+const BASE_URL = "https://student-internship-portal-lvvf.onrender.com";
 
 const studentTableBody = document.getElementById("studentTableBody");
 
