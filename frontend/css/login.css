@@ -139,3 +139,81 @@ button:hover{
 .register-link a:hover{
     text-decoration:underline;
 }
+
+@media (max-width: 768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .login-section{
+        padding: 50px 20px;
+    }
+
+    .login-card{
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .logo p{
+        font-size:12px;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .login-section{
+        padding:40px 15px;
+    }
+
+    .login-card{
+        width:100%;
+        padding:25px 20px;
+        border-radius:15px;
+    }
+
+    .login-card h1{
+        font-size:28px;
+    }
+
+    .login-card p{
+        font-size:14px;
+        margin-bottom:20px;
+    }
+
+    input{
+        padding:12px;
+        font-size:15px;
+    }
+
+    button{
+        padding:14px;
+        font-size:16px;
+    }
+
+    footer{
+        padding:15px;
+        font-size:14px;
+    }
+
+}

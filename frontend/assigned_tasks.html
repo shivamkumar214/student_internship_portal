@@ -1,94 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Assigned Tasks | Student Internship Portal</title>
 
-    <link rel="stylesheet" href="./css/assigned_tasks.css">
+    <link rel="stylesheet" href="./css/assigned_tasks.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>🎓 SIP</h2>
+          <p>Student Internship Portal</p>
+        </div>
 
-        <nav class="navbar">
-
-            <div class="logo">
-                <h2>🎓 SIP</h2>
-                <p>Student Internship Portal</p>
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="upload_resume.html">Resume</a></li>
-                <li><a href="assigned_tasks.html">Tasks</a></li>
-                <li><a href="daily_progress.html">Progress</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#" id="logoutBtn">Logout</a></li>
-            </ul>
-
-        </nav>
-
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="upload_resume.html">Resume</a></li>
+          <li><a href="assigned_tasks.html">Tasks</a></li>
+          <li><a href="daily_progress.html">Progress</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="tasks-section">
+      <div class="tasks-card">
+        <h1>Assigned Tasks</h1>
 
-        <div class="tasks-card">
+        <p>View all internship tasks assigned by Admin.</p>
+        <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Description</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-            <h1>Assigned Tasks</h1>
-
-            <p>
-                View all internship tasks assigned by Admin.
-            </p>
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Task</th>
-                        <th>Description</th>
-                        <th>Deadline</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="taskTableBody">
-
-                    <!-- Tasks will come from Backend -->
-
-                </tbody>
-
-            </table>
-
-            <p id="noTasks" style="display:none; text-align:center; margin-top:20px;">
-                No Tasks Assigned Yet.
-            </p>
-
+          <tbody id="taskTableBody">
+            <!-- Tasks will come from Backend -->
+          </tbody>
+        </table>
         </div>
-
+        <p
+          id="noTasks"
+          style="display: none; text-align: center; margin-top: 20px">
+          No Tasks Assigned Yet.
+        </p>
+      </div>
     </section>
 
     <footer>
-
-        <p>
-            © 2026 Student Internship Portal | All Rights Reserved
-        </p>
-
+      <p>© 2026 Student Internship Portal | All Rights Reserved</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script type="module" src="./js/assigned_tasks.js"></script>
     <script src="./js/assigned_tasks.js"></script>
-</body>
-
+  </body>
 </html>

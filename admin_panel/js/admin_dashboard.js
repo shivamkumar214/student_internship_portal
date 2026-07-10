@@ -1,5 +1,6 @@
 // import { BASE_URL } from "../../frontend/js/config.js";
 const BASE_URL = "https://student-internship-portal-lvvf.onrender.com";
+// const BASE_URL = "http://127.0.0.1:5000";
 
 const studentTableBody = document.getElementById("studentTableBody");
 
@@ -247,7 +248,7 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
       },
     );
 
-    window.location.href = "admin_login.html";
+    window.location.href = "index.html";
   } catch (error) {
     console.log(error);
   }

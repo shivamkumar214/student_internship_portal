@@ -4,6 +4,7 @@ import fs from "fs";
 
 export const uploadResume = async (req, res) => {
   try {
+    // Check file
     if (!req.file) {
       return res.status(400).json({
         success: false,
@@ -11,43 +12,54 @@ export const uploadResume = async (req, res) => {
       });
     }
 
-    const resume = req.file;
+    // Find User
     const user = await User.findById(req.userId);
-    console.log("resume.path:", resume.path);
-    console.log("File exists:", fs.existsSync(resume.path));
-    console.log("Current cwd:", process.cwd());
 
-    // Delete old Resume
-    if (user.resumePublicId) {
-      await cloudinary.uploader.destroy(user.resumePublicId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User Not Found",
+      });
     }
 
-    const result = await cloudinary.uploader.upload(resume.path, {
+    // Delete old resume from Cloudinary
+    if (user.resumePublicId) {
+      await cloudinary.uploader.destroy(user.resumePublicId, {
+        resource_type: "image",
+      });
+    }
+
+    // Upload new resume
+    const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "Temporary-Student-Resume",
       resource_type: "image",
     });
 
-    console.log(result.public_id);
-    console.log(result.resource_type);
-    console.log(result.format);
-
-    // user.resume = result.secure_url;
+    // Save URL and Public ID
     user.resume = result.secure_url;
     user.resumePublicId = result.public_id;
 
-    console.log("result.secure_url: ", result.secure_url);
-
     await user.save();
 
-    await fs.promises.unlink(resume.path);
+    // Delete temporary local file
+    if (fs.existsSync(req.file.path)) {
+      await fs.promises.unlink(req.file.path);
+    }
 
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       message: "Resume Uploaded Successfully",
       resume: user.resume,
     });
+
   } catch (error) {
-    console.log(error.message);
+
+    // Delete temporary file if exists
+    if (req.file && fs.existsSync(req.file.path)) {
+      await fs.promises.unlink(req.file.path);
+    }
+
+    console.log(error);
 
     return res.status(500).json({
       success: false,
@@ -55,6 +67,7 @@ export const uploadResume = async (req, res) => {
     });
   }
 };
+
 
 export const deleteResume = async (req, res) => {
   try {

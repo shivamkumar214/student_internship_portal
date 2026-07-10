@@ -4,7 +4,6 @@
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
 }
-S
 body{
     background-color:FloralWhite;
     color:DarkSlateGray;
@@ -102,20 +101,6 @@ button:hover{
     text-decoration:underline;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Verdana, Geneva,sans-serif;
-}
-
-body{
-
-    background-color:FloralWhite;
-    color:DarkSlateGray;
-
-}
-
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -159,4 +144,87 @@ footer{
     text-align:center;
     padding:20px;
     margin-top:50px;
+}
+
+/* ==========================
+   Tablet
+========================== */
+@media (max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+        gap:18px;
+    }
+
+    .nav-links{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .register-section{
+        padding:50px 20px;
+    }
+
+    .register-card{
+        width:100%;
+        max-width:500px;
+        padding:30px;
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+@media (max-width:480px){
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .logo p{
+        font-size:12px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .register-section{
+        padding:40px 15px;
+    }
+
+    .register-card{
+        width:100%;
+        padding:25px 20px;
+        border-radius:15px;
+    }
+
+    .register-card h1{
+        font-size:28px;
+    }
+
+    .register-card p{
+        font-size:14px;
+        margin-bottom:20px;
+    }
+
+    input{
+        padding:12px;
+        font-size:15px;
+    }
+
+    button{
+        padding:14px;
+        font-size:16px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:15px;
+    }
 }

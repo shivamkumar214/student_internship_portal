@@ -5,7 +5,6 @@ const statusText = document.getElementById("statusText");
 const viewResumeBtn = document.getElementById("viewResumeBtn");
 const deleteResumeBtn = document.getElementById("deleteResumeBtn");
 
-
 // Get Profile
 async function getProfile() {
   try {
@@ -30,12 +29,14 @@ async function getProfile() {
 
 getProfile();
 
-
-
 // Upload Resume
 resumeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const file = document.getElementById("resume").files[0];
+
+  if (!file) {
+    return alert("Select Resume");
+  }
 
   const formData = new FormData();
   formData.append("resume", file);
@@ -51,10 +52,10 @@ resumeForm.addEventListener("submit", async (e) => {
     );
     console.log(response.data.message);
 
-    alert(response.data.message);
-
-    // getProfile();
+    getProfile();
     resumeForm.reset();
+
+    alert(response.data.message);
   } catch (error) {
     console.log("errrpr", error);
     console.log(error.response);

@@ -1,5 +1,6 @@
 // import { BASE_URL } from "../../frontend/js/config.js";
 const BASE_URL = "https://student-internship-portal-lvvf.onrender.com";
+// const BASE_URL = "http://127.0.0.1:5000";
 
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("message");
@@ -27,7 +28,7 @@ loginForm.addEventListener("submit", async (e) => {
 
     setTimeout(() => {
       window.location.href = "admin_dashboard.html";
-    }, 5000);
+    }, 1000);
   } catch (error) {
     message.style.color = "red";
     message.innerText = error.response;
