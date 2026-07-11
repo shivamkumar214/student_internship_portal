@@ -242,9 +242,14 @@ npm run dev
 
 ---
 
-# 👨‍💻 Author
+# 👥 Team
 
-**Shivam Kumar**
+| Name | Role | GitHub |
+|------|------|--------|
+| **Shivam Kumar** | Backend Development, Database Design, Authentication, API Development, Resume Upload (Cloudinary), Task Management, Deployment | [@shivamkumar214](https://github.com/shivamkumar214) |
+| **Mouli Ghansal** | Frontend Development | [@moulighansal](https://github.com/moulighansal) |
+| **Aarif** | Frontend Development | [@Aarifcode](https://github.com/Aarifcode) |
+| **Manish Yadav** | Frontend Development | [@133manish-yadav456](https://github.com/133manish-yadav456) |
 
 GitHub:
 https://github.com/shivamkumar214
