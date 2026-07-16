@@ -31,6 +31,7 @@ async function getProfile() {
     } catch (error) {
 
         console.log(error);
+        window.location.href="login.html";
 
     }
 
@@ -55,5 +56,6 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
         window.location.href = "login.html";
     } catch (error) {
         console.log(error);
+        window.location.href="login.html";
     }
 });

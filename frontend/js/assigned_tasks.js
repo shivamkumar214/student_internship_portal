@@ -3,6 +3,18 @@ import { BASE_URL } from "./config.js";
 const taskTableBody = document.getElementById("taskTableBody");
 const noTasks = document.getElementById("noTasks");
 
+async function checkAuth() {
+  try {
+    console.log("i am daily_progress.js from checkAuth")
+    await axios.get(`${BASE_URL}/api/profile`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    window.location.href = "login.html";
+  }
+}
+
+checkAuth()
 
 // Get Assigned Tasks
 async function getTasks() {

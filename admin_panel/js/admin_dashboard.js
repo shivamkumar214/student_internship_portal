@@ -28,6 +28,7 @@ async function getDashboard() {
     completedCount.innerText = response.data.completedTasks;
   } catch (error) {
     console.log(error);
+    window.location.href="index.html"
   }
 }
 

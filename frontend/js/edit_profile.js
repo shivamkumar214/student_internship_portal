@@ -27,6 +27,7 @@ async function getProfile() {
     } catch (error) {
 
         console.log(error);
+        window.location.href = "login.html";
 
     }
 

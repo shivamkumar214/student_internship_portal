@@ -1,129 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Student Registration</title>
 
-    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/register.css" />
+  </head>
 
-</head>
-
-<body>
-
-<header>
-
-    <nav class="navbar">
+  <body>
+    <header>
+      <nav class="navbar">
         <div class="logo">
-            <h2>🎓 SIP</h2>
-            <p>Student Internship Portal</p>
+          <h2>🎓 SIP</h2>
+          <p>Student Internship Portal</p>
         </div>
 
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
         </ul>
+      </nav>
+    </header>
 
-    </nav>
-
-</header>
-
-<section class="register-section">
-
-    <div class="register-card">
-
+    <section class="register-section">
+      <div class="register-card">
         <h1>Student Registration</h1>
 
         <p>Create your account to begin your internship journey.</p>
 
         <form id="registerForm">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="name"
+            placeholder="Enter your full name"
+            required />
 
-            <label for="fullname">Full Name</label>
-            <input
-                type="text"
-                id="fullname"
-                name="name"
-                placeholder="Enter your full name"
-                required>
+          <label for="EmailAddress">Email Address</label>
+          <input
+            type="email"
+            id="EmailAddress"
+            name="email"
+            placeholder="Enter your email address"
+            required />
 
-            <label for="EmailAddress">Email Address</label>
-            <input
-                type="email"
-                id="EmailAddress"
-                name="email"
-                placeholder="Enter your email address"
-                required>
+          <label for="PhoneNumber">Phone Number</label>
+          <input
+            type="tel"
+            id="PhoneNumber"
+            name="phone"
+            placeholder="Enter your phone number"
+            required />
 
-            <label for="PhoneNumber">Phone Number</label>
-            <input
-                type="tel"
-                id="PhoneNumber"
-                name="phone"
-                placeholder="Enter your phone number"
-                required>
+          <label for="CollegeName">College Name</label>
+          <input
+            type="text"
+            id="CollegeName"
+            name="college"
+            placeholder="Enter your college name"
+            required />
 
-            <label for="CollegeName">College Name</label>
-            <input
-                type="text"
-                id="CollegeName"
-                name="college"
-                placeholder="Enter your college name"
-                required>
+          <label for="Course">Course</label>
+          <input
+            type="text"
+            id="Course"
+            name="course"
+            placeholder="Enter your course"
+            required />
 
-            <label for="Course">Course</label>
-            <input
-                type="text"
-                id="Course"
-                name="course"
-                placeholder="Enter your course"
-                required>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create password"
+            required />
 
-            <label for="password">Password</label>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Create password"
-                required>
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm password"
+            required />
 
-            <label for="confirmPassword">Confirm Password</label>
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm password"
-                required>
-
-            <button type="submit">Register</button>
-
+          <button type="submit">Register</button>
         </form>
 
         <p class="login-text">
-            Already have an account?
-            <a href="login.html">Login</a>
+          Already have an account?
+          <a href="login.html">Login</a>
         </p>
+      </div>
+    </section>
 
-    </div>
+    <footer>
+      <p>© 2026 Student Internship Portal | All Rights Reserved</p>
+    </footer>
 
-</section>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<footer>
-    <p>
-        © 2026 Student Internship Portal | All Rights Reserved
-    </p>
-</footer>
-
-<!-- Axios CDN -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-<script src="./js/register.js"></script>
-<script type="module" src="./js/register.js"></script>
-
-</body>
-
+    <script src="./js/register.js"></script>
+    <script type="module" src="./js/register.js"></script>
+  </body>
 </html>

@@ -3,6 +3,19 @@ import { BASE_URL } from "./config.js";
 const progressTableBody = document.getElementById("progressTableBody");
 const noProgress = document.getElementById("noProgress");
 
+async function checkAuth() {
+  try {
+    console.log("i am daily_progress.js from checkAuth")
+    await axios.get(`${BASE_URL}/api/profile`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    window.location.href = "login.html";
+  }
+}
+
+checkAuth()
+
 
 // Get Completed Tasks
 async function getProgress() {
