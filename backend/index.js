@@ -46,13 +46,17 @@ app.use("/api/progress", progressRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.post("/api/logout", (req, res) => {
-  res.clearCookie("token");
-  res.status(200).json({
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
+  return res.status(200).json({
     success: true,
     message: "Logout Successfully",
   });
 });
-
 const PORT = process.env.PORT || 1000;
 
 app.listen(PORT, () => {
